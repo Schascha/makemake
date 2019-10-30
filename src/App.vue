@@ -98,10 +98,14 @@ export default {
 			}
 		},
 		onChangePeriod() {
-			const {brutto, period} = this.form;
+			const {brutto, increase, increaseType, period} = this.form;
 
 			if (brutto) {
-				this.form.brutto = ((period) ? brutto / 12 : brutto * 12);
+				this.form.brutto = (period) ? brutto / 12 : brutto * 12;
+
+				if (!increaseType) {
+					this.form.increase = (period) ? increase / 12 : increase * 12;
+				}
 			}
 		}
 	}
