@@ -80,6 +80,10 @@ export default {
 		total() {
 			const {brutto, increase, increaseType} = this.form;
 
+			if (!increase) {
+				return brutto;
+			}
+
 			return (increaseType) ? calcPercentage(brutto, increase) : parseFloat(brutto) + parseFloat(increase)
 		}
 	},
@@ -90,7 +94,7 @@ export default {
 				end = (increaseType) ? parseFloat(brutto) + parseFloat(increase) : calcPercentage(brutto, increase)
 			;
 
-			if (increase) {
+			if (brutto && increase) {
 				this.form.increase = ((increaseType)
 					? (end - brutto) / brutto * 100
 					: end - parseFloat(brutto)
@@ -103,8 +107,8 @@ export default {
 			if (brutto) {
 				this.form.brutto = (period) ? brutto / 12 : brutto * 12;
 
-				if (!increaseType) {
-					this.form.increase = (period) ? increase / 12 : increase * 12;
+				if (increase && !increaseType) {
+					this.form.increase = ((period) ? increase / 12 : increase * 12).toFixed(2);
 				}
 			}
 		}
