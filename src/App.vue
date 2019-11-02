@@ -12,6 +12,7 @@
 							:labels="{checked: 'Monat', unchecked: 'Jahr'}"
 							:width="70"
 							:color="{checked: '#282828', unchecked: '#282828'}"
+							switch-color="#fff"
 							@change="onChangePeriod" />
 					</span>
 					<input type="text" name="brutto" v-model="form.brutto" :placeholder="(form.period) ? 'z.B. 2500' : 'z.B. 30000'">
@@ -33,9 +34,10 @@
 							v-model="form.increaseType"
 							:labels="{checked: '%', unchecked: '€'}"
 							:color="{checked: '#282828', unchecked: '#282828'}"
+							switch-color="#fff"
 							@change="onChangeIncreaseType" />
 					</span>
-					<input type="text" name="increase" v-model="form.increase" :placeholder="(form.increaseType) ? 'z.B. 3 %' : 'z.B. 200 €'">
+					<input type="text" name="increase" v-model="form.increase" :placeholder="(form.increaseType) ? 'z.B. 3 %' : 'z.B. 75 €'">
 				</label>
 			</div>
 
@@ -84,21 +86,28 @@ export default {
 				return brutto;
 			}
 
-			return (increaseType) ? calcPercentage(brutto, increase) : parseFloat(brutto) + parseFloat(increase)
+			return this.getTotal(brutto, increase, increaseType);
 		}
 	},
 	methods: {
+		getTotal(brutto, increase, type) {
+			return (type)
+				? calcPercentage(brutto, increase)
+				: parseFloat(brutto) + parseFloat(increase);
+		},
+		getIncrease(end, start, type) {
+			return (type)
+				? parseFloat(((end - start) / start * 100).toFixed(2))
+				: (end - parseFloat(start)).toFixed(2);
+		},
 		onChangeIncreaseType() {
 			const
 				{brutto, increase, increaseType} = this.form,
-				end = (increaseType) ? parseFloat(brutto) + parseFloat(increase) : calcPercentage(brutto, increase)
+				total = this.getTotal(brutto, increase, !increaseType)
 			;
 
 			if (brutto && increase) {
-				this.form.increase = ((increaseType)
-					? (end - brutto) / brutto * 100
-					: end - parseFloat(brutto)
-				).toFixed(2);
+				this.form.increase = this.getIncrease(total, brutto, increaseType);
 			}
 		},
 		onChangePeriod() {

@@ -15,14 +15,19 @@ html {
 
 body {
 	margin: 0;
-	padding: 3rem;
+	padding: 3rem 1rem;
 	font-weight: normal;
 	background-color: #FFE474;
 	color: #252525;
 }
 
+#app {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
 h1 {
-	font-size: 3rem;
+	font-size: 4rem;
 	line-height: 1.2;
 	margin: 0 0 2rem;
 	color: #fff;
@@ -30,7 +35,6 @@ h1 {
 
 .form-field {
 	margin: 0 0 2rem;
-	max-width: 640px;
 
 	span {
 		display: block;
