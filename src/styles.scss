@@ -1,0 +1,66 @@
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: -apple-system, Roboto, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 3rem 1rem;
+	font-weight: normal;
+	background-color: #FFE474;
+	color: #252525;
+}
+
+#app {
+	max-width: 640px;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 4rem;
+	line-height: 1.2;
+	margin: 0 0 2rem;
+	color: #fff;
+}
+
+.form-field {
+	margin: 0 0 2rem;
+
+	span {
+		display: block;
+		font-weight: bold;
+	}
+
+	input {
+		padding: 0.5rem 0;
+		width: 100%;
+		font: inherit;
+		background: none;
+		border: 0;
+		border-bottom: 2px solid currentColor;
+		color: inherit;
+		outline: 0;
+	}
+}
+
+.result {
+	> span {
+		display: block;
+	}
+}
+
+::placeholder {
+  color: inherit;
+  font-style: italic;
+  opacity: 1;
+}
