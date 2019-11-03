@@ -15,7 +15,7 @@
 							switch-color="#fff"
 							@change="onChangePeriod" />
 					</span>
-					<input type="text" name="brutto" v-model="form.brutto" :placeholder="(form.period) ? 'z.B. 2500' : 'z.B. 30000'">
+					<input type="text" name="brutto" id="brutto" v-model="form.brutto" :placeholder="(form.period) ? 'z.B. 2500' : 'z.B. 30000'">
 				</label>
 			</div>
 
@@ -27,7 +27,7 @@
 			</div>
 
 			<div class="form-field">
-				<label>
+				<label for="increase">
 					<span>
 						Erhöhung in
 						<toggle-button
@@ -37,20 +37,26 @@
 							switch-color="#fff"
 							@change="onChangeIncreaseType" />
 					</span>
-					<input type="text" name="increase" v-model="form.increase" :placeholder="(form.increaseType) ? 'z.B. 3 %' : 'z.B. 75 €'">
+					<input type="text" name="increase" id="increase" v-model="form.increase" :placeholder="(form.increaseType) ? 'z.B. 3 %' : 'z.B. 75 €'">
 				</label>
 			</div>
 
 			<div class="result">
-				<span>{{salary}}</span>
-				<span>{{increase}}</span>
+				<span v-if="salary">
+					<strong>{{salary.toFixed(2)}} €</strong>
+					/ Stunde
+				</span>
+				<span v-if="total">
+					<strong>{{total.toFixed(2)}} €</strong>
+					/ {{(form.period) ? 'Monat' : 'Jahr'}}
+				</span>
 			</div>
 		</form>
 	</div>
 </template>
 
 <script>
-import {percentageChange, percentageDiffercence, salaryPerHour} from './calculations';
+import {percentageChange, percentageDiffercence, salaryPerHour} from './utils/calculations';
 
 
 export default {
@@ -68,25 +74,17 @@ export default {
 	},
 	computed: {
 		salary() {
-			const {form: {brutto, hours, period}, total} = this;
+			const
+				{brutto, hours, period} = this.form,
+				total = this.total || brutto
+			;
 
-			return brutto && hours &&
-				`${salaryPerHour((period) ? total : total / 12, hours).toFixed(2)} € / Stunde`;
-		},
-		increase() {
-			const {form: {brutto, increase, period}, total} = this;
-
-			return brutto && increase &&
-				`${total.toFixed(2)} € / ${(period) ? 'Monat' : 'Jahr'}`;
+			return brutto && hours && salaryPerHour((period) ? total : total / 12, hours);
 		},
 		total() {
 			const {brutto, increase, increaseType} = this.form;
 
-			if (!increase) {
-				return brutto;
-			}
-
-			return this.getTotal(brutto, increase, increaseType);
+			return brutto && increase && this.getTotal(brutto, increase, increaseType);
 		}
 	},
 	methods: {
@@ -95,15 +93,15 @@ export default {
 				? percentageChange(brutto, increase)
 				: parseFloat(brutto) + parseFloat(increase);
 		},
-		getIncrease(end, start, type) {
+		getIncrease(total, brutto, type) {
 			return (type)
-				? parseFloat(percentageDiffercence(start, end).toFixed(2))
-				: (end - parseFloat(start)).toFixed(2);
+				? parseFloat(percentageDiffercence(brutto, total).toFixed(2))
+				: (total - parseFloat(brutto)).toFixed(2);
 		},
 		onChangeIncreaseType() {
 			const
 				{brutto, increase, increaseType} = this.form,
-				total = this.getTotal(brutto, increase, !increaseType)
+				total = this.getTotal(brutto, increase, !increaseType) || brutto
 			;
 
 			if (brutto && increase) {
