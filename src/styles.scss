@@ -1,8 +1,14 @@
+$font-family: -apple-system, Roboto, Helvetica, Arial, sans-serif;
+
+$color-brand: #ffe474;
+$color-text: #252525;
+$color-light: #fff;
+
 html {
 	box-sizing: border-box;
+	font-family: $font-family;
 	font-size: 16px;
 	line-height: 1.5;
-	font-family: -apple-system, Roboto, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -16,21 +22,21 @@ html {
 body {
 	margin: 0;
 	padding: 3rem 1rem;
+	background-color: $color-brand;
+	color: $color-text;
 	font-weight: normal;
-	background-color: #FFE474;
-	color: #252525;
 }
 
-#app {
-	max-width: 640px;
+.app {
 	margin: 0 auto;
+	max-width: 640px;
 }
 
 h1 {
+	margin: 0 0 2rem;
+	color: $color-light;
 	font-size: 4rem;
 	line-height: 1.2;
-	margin: 0 0 2rem;
-	color: #fff;
 }
 
 .form-field {
@@ -44,12 +50,12 @@ h1 {
 	input {
 		padding: 0.5rem 0;
 		width: 100%;
-		font: inherit;
 		background: none;
 		border: 0;
 		border-bottom: 2px solid currentColor;
-		color: inherit;
 		outline: 0;
+		color: inherit;
+		font: inherit;
 	}
 }
 
@@ -64,7 +70,7 @@ h1 {
 }
 
 ::placeholder {
-  color: inherit;
-  font-style: italic;
-  opacity: 1;
+	opacity: 1;
+	color: inherit;
+	font-style: italic;
 }

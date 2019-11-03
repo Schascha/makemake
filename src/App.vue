@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div class="app" id="app">
 		<h1>makemake</h1>
 
 		<form>
