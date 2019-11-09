@@ -4,31 +4,25 @@
 
 		<form>
 			<div class="form-field">
-				<toggle-button
-					v-model="form.calculationType"
-					:color="{checked: '#282828', unchecked: '#282828'}"
-					switch-color="#fff"
-					@change="onChangeCalculationType" />
 				<label for="brutto">
-					<template v-if="form.calculationType">
-						<span>
-							Bruttolohn im
-							<toggle-button
-								v-model="form.period"
-								:labels="{checked: 'Monat', unchecked: 'Jahr'}"
-								:width="70"
-								:color="{checked: '#282828', unchecked: '#282828'}"
-								switch-color="#fff"
-								@change="onChangePeriod" />
-						</span>
-						<input type="number" name="brutto" id="brutto" v-model="form.brutto" :placeholder="(form.period) ? 'z.B. 2500' : 'z.B. 30000'">
-					</template>
-					<template v-else>
-						<span>
-							Stundenlohn
-						</span>
-						<input type="number" name="brutto" id="brutto" v-model="form.brutto" placeholder="z.B. 14 €">
-					</template>
+					<span>
+						<toggle-button
+							v-model="form.calculationType"
+							:labels="{checked: 'Bruttolohn', unchecked: 'Stundenlohn'}"
+							:width="100"
+							:color="{checked: '#282828', unchecked: '#282828'}"
+							switch-color="#fff"
+							@change="onChangeCalculationType" />
+						im
+						<toggle-button
+							v-model="form.period"
+							:labels="{checked: 'Monat', unchecked: 'Jahr'}"
+							:width="70"
+							:color="{checked: '#282828', unchecked: '#282828'}"
+							switch-color="#fff"
+							@change="onChangePeriod" />
+					</span>
+					<input type="number" name="brutto" id="brutto" v-model="form.brutto" :placeholder="`z.B. ${(form.calculationType) ? ((form.period) ? '2500' : '30000') : '14'} €`">
 				</label>
 			</div>
 
@@ -71,10 +65,8 @@
 						/ Stunde
 					</span>
 					<span v-if="salary">
-						<strong>{{number(salary)}} €</strong>
-						/ Monat oder
-						<strong>{{number(salary * 12)}} €</strong>
-						/ Jahr
+						<strong>{{number((form.period) ? salary : salary * 12)}} €</strong>
+						/ {{(form.period) ? 'Monat' : 'Jahr'}}
 					</span>
 				</template>
 			</div>
@@ -107,11 +99,9 @@ export default {
 				total = this.total || brutto
 			;
 
-			if (!calculationType) {
-				return brutto && hours && salaryPerMonth(total, hours);
-			}
-
-			return brutto && hours && salaryPerHour((period) ? total : total / 12, hours);
+			return brutto && hours > 0 && ((calculationType)
+				? salaryPerHour((period) ? total : total / 12, hours)
+				: salaryPerMonth(total, hours));
 		},
 		total() {
 			const {brutto, increase, increaseType} = this.form;
@@ -157,9 +147,9 @@ export default {
 			}
 		},
 		onChangePeriod() {
-			const {brutto, increase, increaseType, period} = this.form;
+			const {brutto, calculationType, increase, increaseType, period} = this.form;
 
-			if (brutto) {
+			if (brutto && calculationType) {
 				this.form.brutto = number((period) ? brutto / 12 : brutto * 12);
 
 				if (increase && !increaseType) {
