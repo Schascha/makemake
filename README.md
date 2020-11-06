@@ -4,6 +4,8 @@
 
 > Just a simple working hours calculator
 
+https://schascha.github.io/makemake/
+
 ## Project setup
 ```
 npm install
@@ -11,7 +13,7 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run dev
+npm start
 ```
 
 ### Compiles and minifies for production
