@@ -10,13 +10,14 @@
 
 		<footer>
 			<a
-				href="https://github.com/Schascha/makemake"
-				title="Mehr auf GitHub"
+				:href="$t('link.github.href')"
+				:title="$t('link.github.title')"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
 				<IconGitHub />
 			</a>
+			<Language />
 		</footer>
 	</div>
 </template>
@@ -24,12 +25,14 @@
 <script>
 	import IconGitHub from '@/assets/icons/github.svg?inline';
 	import Calculator from '@/components/Calculator';
+	import Language from '@/components/Language';
 
 	export default {
 		name: 'app',
 		components: {
 			IconGitHub,
-			Calculator
+			Calculator,
+			Language
 		}
 	}
 </script>

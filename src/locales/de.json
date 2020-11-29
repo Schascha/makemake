@@ -1,0 +1,31 @@
+{
+  "calculator": {
+    "currency": "€",
+    "grossWage": "Bruttolohn",
+    "hour": "Stunde",
+    "hourlyWage": "Stundenlohn",
+    "increase": "Erhöhung in",
+    "increaseInPercent": "%",
+    "increaseInValue": "€",
+    "month": "Monat",
+    "placeholder": {
+      "increaseInPercent": "z.B. 3 %",
+      "increaseInValue": "z.B. 75 €",
+      "wagePerHour": "z.B. 14 €",
+      "wagePerMonth": "z.B. 2500 €",
+      "wagePerYear": "z.B. 30000 €",
+      "workingHours": "z.B. 40"
+    },
+    "typeInPeriod": "im",
+    "wagePerMonth": "Monat",
+    "wagePeryear": "Jahr",
+    "workingHours": "Arbeits­stunden pro Woche",
+    "year": "Jahr"
+  },
+  "link": {
+    "github": {
+      "href": "https://github.com/Schascha/makemake",
+      "title": "Mehr auf GitHu"
+    }
+  }
+}

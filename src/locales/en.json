@@ -1,0 +1,31 @@
+{
+  "calculator": {
+    "currency": "$",
+    "grossWage": "Gross Wage",
+    "hour": "Hour",
+    "hourlyWage": "Hourly Wage",
+    "increase": "Increase",
+    "increaseInPercent": "%",
+    "increaseInValue": "$",
+    "month": "Month",
+    "placeholder": {
+      "increaseInPercent": "e.g. 3 %",
+      "increaseInValue": "e.g. 75 $",
+      "wagePerHour": "e.g. 14 $",
+      "wagePerMonth": "e.g. 2500 $",
+      "wagePerYear": "e.g. 30000 $",
+      "workingHours": "e.g. 40"
+    },
+    "typeInPeriod": "in",
+    "wagePerMonth": "Month",
+    "wagePeryear": "Year",
+    "workingHours": "Working hours",
+    "year": "Year"
+  },
+  "link": {
+    "github": {
+      "href": "https://github.com/Schascha/stechus-kaktus",
+      "title": "View on GitHub"
+    }
+  }
+}

@@ -1,5 +1,5 @@
 module.exports = {
-	css: {
+    css: {
 		loaderOptions: {
 			scss: {
 				prependData:  `
@@ -10,7 +10,16 @@ module.exports = {
 		}
 	},
 
-	publicPath: process.env.NODE_ENV === 'production'
+    publicPath: process.env.NODE_ENV === 'production'
 		? '/makemake/'
-		: '/'
- }
+		: '/',
+
+	pluginOptions: {
+		i18n: {
+			locales: ['en', 'de'],
+			fallbackLocale: 'en',
+			localeDir: 'locales',
+			enableInSFC: true
+		}
+	},
+}

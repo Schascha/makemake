@@ -5,65 +5,91 @@
 				<span>
 					<toggle-button
 						v-model="form.calculationType"
-						:labels="{checked: 'Bruttolohn', unchecked: 'Stundenlohn'}"
+						:labels="{
+							checked: $t('calculator.grossWage'),
+							unchecked: $t('calculator.hourlyWage')
+						}"
 						:width="100"
 						:color="{checked: '#282828', unchecked: '#282828'}"
 						switch-color="#fff"
 						@change="onChangeCalculationType" />
-					im
+					{{ $t('calculator.typeInPeriod') }}
 					<toggle-button
 						v-model="form.period"
-						:labels="{checked: 'Monat', unchecked: 'Jahr'}"
+						:labels="{
+							checked: $t('calculator.wagePerMonth'),
+							unchecked: $t('calculator.wagePeryear')
+						}"
 						:width="70"
 						:color="{checked: '#282828', unchecked: '#282828'}"
 						switch-color="#fff"
 						@change="onChangePeriod" />
 				</span>
-				<input type="number" name="brutto" id="brutto" v-model="form.brutto" :placeholder="`z.B. ${(form.calculationType) ? ((form.period) ? '2500' : '30000') : '14'} €`">
+				<input
+					type="number"
+					name="brutto"
+					id="brutto"
+					:placeholder="(form.calculationType) ? ((form.period) ? $t('calculator.placeholder.wagePerMonth') : $t('calculator.placeholder.wagePerYear')) : $t('calculator.placeholder.wagePerHour')"
+					v-model="form.brutto"
+				>
 			</label>
 		</div>
 
 		<div class="form-field">
 			<label>
-				<span>Arbeits­stunden pro Woche</span>
-				<input type="number" name="hours" v-model="form.hours" placeholder="z.B. 40">
+				<span>{{ $t('calculator.workingHours') }}</span>
+				<input
+					type="number"
+					name="hours"
+					:placeholder="$t('calculator.placeholder.workingHours')"
+					v-model="form.hours"
+				>
 			</label>
 		</div>
 
 		<div class="form-field">
 			<label for="increase">
 				<span>
-					Erhöhung in
+					{{ $t('calculator.increase') }}
 					<toggle-button
 						v-model="form.increaseType"
-						:labels="{checked: '%', unchecked: '€'}"
+						:labels="{
+							checked: $t('calculator.increaseInPercent'),
+							unchecked: $t('calculator.increaseInValue')
+						}"
 						:color="{checked: '#282828', unchecked: '#282828'}"
 						switch-color="#fff"
 						@change="onChangeIncreaseType" />
 				</span>
-				<input type="number" name="increase" id="increase" v-model="form.increase" :placeholder="(form.increaseType) ? 'z.B. 3 %' : 'z.B. 75 €'">
+				<input
+					type="number"
+					name="increase"
+					id="increase"
+					:placeholder="(form.increaseType) ? $t('calculator.placeholder.increaseInPercent') : $t('calculator.placeholder.increaseInValue')"
+					v-model="form.increase"
+				>
 			</label>
 		</div>
 
 		<div class="result">
 			<template v-if="form.calculationType">
 				<span v-if="salary">
-					<strong>{{number(salary)}} €</strong>
-					/ Stunde
+					<strong>{{number(salary)}} {{ $t('calculator.currency') }}</strong>
+					/ {{ $t('calculator.hour') }}
 				</span>
 				<span v-if="total">
-					<strong>{{number(total)}} €</strong>
-					/ {{(form.period) ? 'Monat' : 'Jahr'}}
+					<strong>{{number(total)}} {{ $t('calculator.currency') }}</strong>
+					/ {{(form.period) ? $t('calculator.month') : $t('calculator.year')}}
 				</span>
 			</template>
 			<template v-else>
 				<span v-if="total">
-					<strong>{{number(total)}} €</strong>
-					/ Stunde
+					<strong>{{number(total)}} {{ $t('calculator.currency') }}</strong>
+					/ {{ $t('calculator.hour') }}
 				</span>
 				<span v-if="salary">
-					<strong>{{number((form.period) ? salary : salary * 12)}} €</strong>
-					/ {{(form.period) ? 'Monat' : 'Jahr'}}
+					<strong>{{number((form.period) ? salary : salary * 12)}} {{ $t('calculator.currency') }}</strong>
+					/ {{(form.period) ? $t('calculator.month') : $t('calculator.year')}}
 				</span>
 			</template>
 		</div>
