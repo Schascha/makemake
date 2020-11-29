@@ -1,9 +1,3 @@
-$font-family: -apple-system, Roboto, Helvetica, Arial, sans-serif;
-
-$color-brand: #ffe474;
-$color-text: #252525;
-$color-light: #fff;
-
 html {
 	box-sizing: border-box;
 	font-family: $font-family;
@@ -21,22 +15,61 @@ html {
 
 body {
 	margin: 0;
-	padding: 3rem 1rem;
 	background-color: $color-brand;
 	color: $color-text;
 	font-weight: normal;
 }
 
-.app {
-	margin: 0 auto;
-	max-width: 640px;
+html,
+body {
+	height: 100%;
+	min-height: 100%;
+}
+
+footer {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	position: absolute;
+	right: 1.25rem;
+	bottom: 1.25rem;
+	left: 1.25rem;
 }
 
 h1 {
 	margin: 0 0 2rem;
-	color: $color-light;
-	font-size: 4rem;
+	font-size: 2.5rem;
 	line-height: 1.2;
+
+	@include mq($sm) {
+		font-size: 4rem;
+	}
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+svg {
+	width: 2rem;
+	height: 2rem;
+	fill: currentColor;
+}
+
+::placeholder {
+	opacity: 1;
+	color: inherit;
+	font-style: italic;
+}
+
+.frame {
+	position: relative;
+	margin: 0 auto;
+	padding: 3rem 1.25rem;
+	width: 100%;
+	max-width: 640px;
+	min-height: 100%;
 }
 
 .form-field {
@@ -67,10 +100,4 @@ h1 {
 	> span {
 		display: block;
 	}
-}
-
-::placeholder {
-	opacity: 1;
-	color: inherit;
-	font-style: italic;
 }
