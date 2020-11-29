@@ -1,6 +1,6 @@
 # makemake
 
-[![Travis Status](https://travis-ci.com/Schascha/makemake.svg?branch=master)](https://travis-ci.com/Schascha/makemake)
+![Build](https://github.com/Schascha/makemake/workflows/Build/badge.svg)
 
 > Just a simple working hours calculator
 
