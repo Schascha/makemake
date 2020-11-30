@@ -1,8 +1,8 @@
-import Vue from 'vue'
-import App from './App.vue'
-
+import Vue from 'vue';
+import App from './App.vue';
+import './registerServiceWorker';
 import ToggleButton from 'vue-js-toggle-button';
-import i18n from './i18n'
+import i18n from './i18n';
 
 Vue.use(ToggleButton);
 

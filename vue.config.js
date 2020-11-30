@@ -22,4 +22,9 @@ module.exports = {
 			enableInSFC: true
 		}
 	},
+
+	pwa: {
+		name: 'makemake',
+		themeColor: '#FFE474'
+	},
 }
