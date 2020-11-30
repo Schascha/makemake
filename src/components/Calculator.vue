@@ -29,6 +29,7 @@
 					type="number"
 					name="brutto"
 					id="brutto"
+					min="0"
 					:placeholder="(form.calculationType) ? ((form.period) ? $t('calculator.placeholder.wagePerMonth') : $t('calculator.placeholder.wagePerYear')) : $t('calculator.placeholder.wagePerHour')"
 					v-model="form.brutto"
 				>
@@ -41,6 +42,7 @@
 				<input
 					type="number"
 					name="hours"
+					min="0"
 					:placeholder="$t('calculator.placeholder.workingHours')"
 					v-model="form.hours"
 				>
@@ -65,6 +67,7 @@
 					type="number"
 					name="increase"
 					id="increase"
+					min="0"
 					:placeholder="(form.increaseType) ? $t('calculator.placeholder.increaseInPercent') : $t('calculator.placeholder.increaseInValue')"
 					v-model="form.increase"
 				>
