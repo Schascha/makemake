@@ -1,3 +1,5 @@
+![Logo](src/assets/logo.svg/?raw=true)
+
 # makemake
 
 ![Build](https://github.com/Schascha/makemake/workflows/Build/badge.svg)
