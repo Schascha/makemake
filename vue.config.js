@@ -25,6 +25,9 @@ module.exports = {
 
 	pwa: {
 		name: 'makemake',
-		themeColor: '#FFE474'
+		themeColor: '#FFE474',
+		manifestOptions: {
+			background_color: "#FFE474"
+		}
 	},
 }
