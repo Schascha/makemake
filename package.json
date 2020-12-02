@@ -1,7 +1,17 @@
 {
   "name": "makemake",
   "version": "0.0.1",
-  "private": true,
+  "author": "Sascha Künstler <contact.schascha@gmail.com> (http://www.schaschaweb.de)",
+  "license": "MIT",
+  "funding": "https://www.paypal.me/LosZahlos",
+  "homepage": "https://schascha.github.io/makemake/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Schascha/makemake"
+  },
+  "bugs": {
+    "url": "https://github.com/Schascha/makemake/issues"
+  },
   "scripts": {
     "build": "vue-cli-service build",
     "i18n": "i18next \"./src/**/*.{js,vue}\" --config i18next-parser.config.js && vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
@@ -31,24 +41,5 @@
     "vue-cli-plugin-svg": "^0.1.3",
     "vue-js-toggle-button": "^1.3.3",
     "vue-template-compiler": "^2.6.12"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
   }
 }
