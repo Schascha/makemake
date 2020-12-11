@@ -23,9 +23,15 @@ npm start
 npm run build
 ```
 
-### Lints and fixes files
+### Test, lints and fixes files
 ```
 npm test
+```
+
+### Parse i18n translations
+
+```
+npm run i18n
 ```
 
 ## Bugs?
