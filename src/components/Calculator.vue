@@ -76,24 +76,39 @@
 
 		<div class="result">
 			<template v-if="form.calculationType">
-				<span v-if="salary">
-					<strong>{{number(salary)}} {{ $t('calculator.currency') }}</strong>
-					/ {{ $t('calculator.hour') }}
-				</span>
-				<span v-if="total">
-					<strong>{{number(total)}} {{ $t('calculator.currency') }}</strong>
-					/ {{(form.period) ? $t('calculator.month') : $t('calculator.year')}}
-				</span>
+				<p v-if="salary">
+					<strong>
+						{{number(salary)}} {{ $t('calculator.currency') }}
+					</strong>
+					<span>
+						/ {{ $t('calculator.hour') }}
+					</span>
+				</p>
+				<p v-if="total">
+					<strong>
+						{{number(total)}} {{ $t('calculator.currency') }}
+					</strong>
+					<span>
+						/ {{(form.period) ? $t('calculator.month') : $t('calculator.year')}}
+					</span>
+				</p>
 			</template>
 			<template v-else>
-				<span v-if="total">
-					<strong>{{number(total)}} {{ $t('calculator.currency') }}</strong>
-					/ {{ $t('calculator.hour') }}
-				</span>
-				<span v-if="salary">
-					<strong>{{number((form.period) ? salary : salary * 12)}} {{ $t('calculator.currency') }}</strong>
-					/ {{(form.period) ? $t('calculator.month') : $t('calculator.year')}}
-				</span>
+				<p v-if="total">
+					<strong>
+						{{number(total)}} {{ $t('calculator.currency') }}
+					</strong>
+					<span>
+						/ {{ $t('calculator.hour') }}
+					</span>
+				</p>
+				<p v-if="salary">
+					<strong>
+						{{number((form.period) ? salary : salary * 12)}} {{ $t('calculator.currency') }}
+					</strong>
+					<span> / {{(form.period) ? $t('calculator.month') : $t('calculator.year')}}
+					</span>
+				</p>
 			</template>
 		</div>
 	</form>
@@ -185,3 +200,7 @@ export default {
 	}
 }
 </script>
+
+<style lang="scss">
+	@import '@/scss/components/_calculator';
+</style>

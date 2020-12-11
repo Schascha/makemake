@@ -71,34 +71,3 @@ svg {
 	max-width: 640px;
 	min-height: 100%;
 }
-
-.form-field {
-	margin: 0 0 2rem;
-
-	span {
-		display: block;
-		font-weight: bold;
-	}
-
-	input {
-		appearance: none;
-		padding: 0.5rem 0;
-		width: 100%;
-		background: none;
-		border: 0;
-		border-bottom: 2px solid currentColor;
-		outline: 0;
-		color: inherit;
-		font: inherit;
-	}
-}
-
-.result {
-	strong {
-		font-size: 1.5rem;
-	}
-
-	> span {
-		display: block;
-	}
-}
