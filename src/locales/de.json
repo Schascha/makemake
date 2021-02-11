@@ -22,10 +22,15 @@
     "workingHours": "Arbeits­stunden pro Woche",
     "year": "Jahr"
   },
+  "field": {
+    "language": {
+      "label": "Sprache"
+    }
+  },
   "link": {
     "github": {
       "href": "https://github.com/Schascha/makemake",
-      "title": "Mehr auf GitHu"
+      "title": "Mehr auf GitHub"
     }
   }
 }

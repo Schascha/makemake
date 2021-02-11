@@ -22,6 +22,11 @@
     "workingHours": "Working hours",
     "year": "Year"
   },
+  "field": {
+    "language": {
+      "label": "Language"
+    }
+  },
   "link": {
     "github": {
       "href": "https://github.com/Schascha/stechus-kaktus",

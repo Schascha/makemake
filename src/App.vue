@@ -1,25 +1,25 @@
 <template>
-	<div class="frame">
-		<header>
-			<h1>makemake</h1>
-		</header>
+  <div class="frame">
+    <header>
+      <h1>makemake</h1>
+    </header>
 
-		<main>
-			<Calculator />
-		</main>
+    <main>
+      <Calculator />
+    </main>
 
-		<footer>
-			<a
-				:href="$t('link.github.href')"
-				:title="$t('link.github.title')"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				<IconGitHub />
-			</a>
-			<Language />
-		</footer>
-	</div>
+    <footer>
+      <a
+        :href="$t('link.github.href')"
+        :title="$t('link.github.title')"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <IconGitHub />
+      </a>
+      <Language />
+    </footer>
+  </div>
 </template>
 
 <script>
@@ -28,7 +28,7 @@
 	import Language from '@/components/Language';
 
 	export default {
-		name: 'app',
+		name: 'App',
 		components: {
 			IconGitHub,
 			Calculator,
@@ -38,5 +38,5 @@
 </script>
 
 <style lang="scss">
-	@import '@/scss/_layout.scss';
+	@import '@/scss/layout';
 </style>

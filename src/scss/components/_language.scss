@@ -13,4 +13,8 @@
 		text-align: inherit;
 		text-transform: uppercase;
 	}
+
+	label {
+		@include visually-hidden();
+	}
 }

@@ -2,17 +2,13 @@ module.exports = {
     css: {
 		loaderOptions: {
 			scss: {
-				prependData:  `
+				additionalData:  `
 					@import '@/scss/_variables.scss';
 					@import '@/scss/_mixins.scss';
 					`
 			}
 		}
 	},
-
-    publicPath: process.env.NODE_ENV === 'production'
-		? '/makemake/'
-		: '/',
 
 	pluginOptions: {
 		i18n: {
@@ -22,6 +18,10 @@ module.exports = {
 			enableInSFC: true
 		}
 	},
+
+	publicPath: process.env.NODE_ENV === 'production'
+		? '/makemake/'
+		: '/',
 
 	pwa: {
 		name: 'makemake',
