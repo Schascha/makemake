@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>makemake</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title><%= htmlWebpackPlugin.options.title %></title>
+	<meta name="description" content="<%= htmlWebpackPlugin.options.meta.description %>">
+
+	<meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>">
+	<meta property="og:description" content="<%= htmlWebpackPlugin.options.meta.description %>">
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="<%= htmlWebpackPlugin.options.meta.url %>" />
+	<meta property="og:image" content="<%= htmlWebpackPlugin.options.meta.url %>img/sharing.png">
+
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:title" content="<%= htmlWebpackPlugin.options.title %>">
+	<meta property="twitter:description" content="<%= htmlWebpackPlugin.options.meta.description %>">
+	<meta property="twitter:image:src" content="<%= htmlWebpackPlugin.options.meta.url %>img/sharing.png">
+
+	<link rel="shortcut icon" href="<%= BASE_URL %>img/icons/favicon.ico">
 </head>
 
 <body>
+	<noscript>
+		<strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+	</noscript>
 	<div id="app"></div>
 </body>
+
 </html>

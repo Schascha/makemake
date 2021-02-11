@@ -4,7 +4,7 @@
 
 ![Build](https://github.com/Schascha/makemake/workflows/Build/badge.svg)
 
-> Just a simple working hours calculator
+> Just a simple working hours and salary calculator
 
 https://schascha.github.io/makemake/
 
