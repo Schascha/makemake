@@ -40,7 +40,7 @@ module.exports = {
 		name: 'makemake',
 		themeColor: '#FFE474',
 		manifestOptions: {
-			background_color: "#FFE474"
+			background_color: '#FFE474'
 		}
-	},
-}
+	}
+};
