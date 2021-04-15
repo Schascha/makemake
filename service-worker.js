@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/makemake/precache-manifest.2e19a5b135eb4495324da5e518c6dd9d.js"
+  "/makemake/precache-manifest.1bdee600c4b5c1a5d902944c38ddb47d.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "makemake"});
