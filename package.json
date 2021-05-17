@@ -35,7 +35,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.26.0",
     "eslint-plugin-vue": "^7.9.0",
-    "i18next-parser": "^3.11.0",
+    "i18next-parser": "^4.0.0",
     "sass": "^1.32.12",
     "sass-loader": "^10.1.1",
     "stylelint": "^13.13.1",
