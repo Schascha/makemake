@@ -2,7 +2,7 @@
 
 # makemake
 
-[![Build](https://github.com/Schascha/makemake/workflows/Build/badge.svg))](https://github.com/Schascha/makemake/actions)
+[![Build](https://github.com/Schascha/makemake/workflows/Build/badge.svg)](https://github.com/Schascha/makemake/actions)
 
 > Just a simple working hours and salary calculator
 
