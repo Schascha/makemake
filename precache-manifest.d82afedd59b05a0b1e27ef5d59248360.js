@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "76674f841db5c9fba28c",
+    "revision": "c11373ae264360a3830b",
     "url": "/makemake/css/app.f3b5503d.css"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/makemake/img/sharing.png"
   },
   {
-    "revision": "f8ceb9d97344e1e2eb95deaea67dde0c",
+    "revision": "4cb726375dc0a3c547b49e45803c55fc",
     "url": "/makemake/index.html"
   },
   {
-    "revision": "76674f841db5c9fba28c",
-    "url": "/makemake/js/app.da8899f1.js"
+    "revision": "c11373ae264360a3830b",
+    "url": "/makemake/js/app.eed072f6.js"
   },
   {
-    "revision": "e065d5fa434c5d61fafe",
-    "url": "/makemake/js/chunk-vendors.fbe9734e.js"
+    "revision": "ad0055c57636a2b81aa8",
+    "url": "/makemake/js/chunk-vendors.dffd4aa5.js"
   },
   {
     "revision": "3898e679f41de9a0f078845b98040077",
