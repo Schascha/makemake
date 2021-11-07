@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@intlify/vue-i18n-loader": "^3.3.0",
-    "@schascha/eslint-config": "^0.0.3",
+    "@schascha/eslint-config": "^0.1.0",
     "@schascha/stylelint-config": "^0.0.6",
     "@vue/cli-plugin-babel": "^4.5.15",
     "@vue/cli-plugin-eslint": "^4.5.15",
