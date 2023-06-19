@@ -11,11 +11,20 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Setup 🔌
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies 👨🏻‍💻
+        run: npm ci
+
+      - name: Run tests 🧪
+        run: npm t
+
       - name: Build 🔧
-        run: |
-          npm ci
-          npm test
-          npm run build
+        run: npm run build
 
       - name: Deploy 🚀
         if: github.ref == 'refs/heads/main'
