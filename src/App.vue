@@ -23,7 +23,7 @@
 </template>
 
 <script>
-	import IconGitHub from '@/assets/icons/github.svg?inline';
+	import IconGitHub from '@/assets/icons/github.svg';
 	import Calculator from '@/components/Calculator';
 	import Language from '@/components/Language';
 
