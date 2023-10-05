@@ -16,7 +16,7 @@
     "build": "vue-cli-service build",
     "i18n": "i18next \"./src/**/*.{js,vue}\" --config i18next-parser.config.js && vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
     "start": "vue-cli-service serve --open",
-    "test": "vue-cli-service lint && stylelint \"./src/**/*.scss\" --syntax scss"
+    "test": "vue-cli-service lint && stylelint \"./src/**/*.scss\""
   },
   "dependencies": {
     "core-js": "^3.22.8",
