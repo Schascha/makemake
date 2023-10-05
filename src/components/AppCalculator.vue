@@ -121,7 +121,7 @@
 import {number, percentageChange, percentageDiffercence, salaryPerHour, salaryPerMonth} from '@/utils/calculations';
 
 export default {
-	name: 'Calculator',
+	name: 'AppCalculator',
 	data() {
 		return {
 			form: {

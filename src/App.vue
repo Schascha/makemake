@@ -5,7 +5,7 @@
 		</header>
 
 		<main>
-			<Calculator />
+			<AppCalculator />
 		</main>
 
 		<footer>
@@ -17,22 +17,22 @@
 			>
 				<IconGitHub />
 			</a>
-			<Language />
+			<AppLanguage />
 		</footer>
 	</div>
 </template>
 
 <script>
 	import IconGitHub from '@/assets/icons/github.svg';
-	import Calculator from '@/components/Calculator';
-	import Language from '@/components/Language';
+	import AppCalculator from '@/components/AppCalculator';
+	import AppLanguage from '@/components/AppLanguage';
 
 	export default {
 		name: 'App',
 		components: {
 			IconGitHub,
-			Calculator,
-			Language
+			AppCalculator,
+			AppLanguage
 		}
 	};
 </script>
