@@ -34,7 +34,7 @@
     "@vue/cli-service": "^5.0.8",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^7.18.0",
+    "eslint-plugin-vue": "^9.17.0",
     "i18next-parser": "^6.5.0",
     "postcss": "^8.4.31",
     "sass": "^1.52.1",
